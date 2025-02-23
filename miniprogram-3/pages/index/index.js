@@ -1,24 +1,23 @@
 // pages/index/index.js
+import axios from 'axios';  // Import axios
+
 Page({
   data: {
-    recommendations: []  // Store the fetched recommendations here
+    attractions: [],  // This will hold the list of attractions fetched from the backend
   },
-
-  onLoad: function () {
-    // Make a request to the backend API
-    wx.request({
-      url: 'https://tourism-backend-z2z4.onrender.com/recommendations', // Backend URL
-      method: 'GET',
-      success: (res) => {
-        if (res.data) {
+  
+  onLoad() {
+    // Fetch the data from the backend when the page loads
+    axios.get('https://tourism-backend-z2z4.onrender.com/api/attractions')  // Your backend URL
+      .then(response => {
+        if (response.data) {
           this.setData({
-            recommendations: res.data  // Set the recommendations data in the page's state
+            attractions: response.data,  // Set the fetched data to 'attractions' in your page's data
           });
         }
-      },
-      fail: (error) => {
-        console.error("Request failed:", error);  // Log error if the request fails
-      }
-    });
-  }
+      })
+      .catch(error => {
+        console.log('Error fetching data:', error);
+      });
+  },
 });

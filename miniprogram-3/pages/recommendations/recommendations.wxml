@@ -1,7 +1,7 @@
 <!-- pages/recommendations/recommendations.wxml -->
 <view>
-  <view class="recommendation" wx:for="{{recommendations}}" wx:key="unique">
-    <text>{{item.name}}</text>
-    <text>{{item.description}}</text>
-  </view>
+  <text>Recommendations:</text>
+  <block wx:for="{{recommendations}}" wx:key="id">
+    <view>{{item.name}}</view>  <!-- Display the name of each recommendation -->
+  </block>
 </view>

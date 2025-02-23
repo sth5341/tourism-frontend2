@@ -1,24 +1,23 @@
 // pages/recommendations/recommendations.js
+import axios from 'axios';  // Importing axios for making HTTP requests
+
 Page({
   data: {
-    recommendations: []  // Store recommendations
+    recommendations: [],  // Will hold the fetched list of recommendations
   },
-
-  onLoad: function () {
-    // Fetch recommendations from the backend
-    wx.request({
-      url: 'https://tourism-backend-z2z4.onrender.com/recommendations',  // Recommendations endpoint
-      method: 'GET',
-      success: (res) => {
-        if (res.data) {
+  
+  onLoad() {
+    // Fetch recommendations data when the page is loaded
+    axios.get('https://tourism-backend-z2z4.onrender.com/api/recommendations')  // Your backend URL
+      .then(response => {
+        if (response.data) {
           this.setData({
-            recommendations: res.data  // Store recommendations
+            recommendations: response.data,  // Set the fetched data to 'recommendations' in page's data
           });
         }
-      },
-      fail: (error) => {
-        console.error("Request failed:", error);
-      }
-    });
-  }
+      })
+      .catch(error => {
+        console.log('Error fetching data:', error);
+      });
+  },
 });

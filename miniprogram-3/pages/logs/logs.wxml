@@ -1,2 +1,7 @@
-<!--pages/logs/logs.wxml-->
-<text>pages/logs/logs.wxml</text>
+<!-- pages/logs/logs.wxml -->
+<view>
+  <text>Logs:</text>
+  <block wx:for="{{logs}}" wx:key="id">
+    <view>{{item.message}}</view>  <!-- Display each log message -->
+  </block>
+</view>

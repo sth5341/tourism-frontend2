@@ -1,11 +1,13 @@
 /* pages/index/index.wxss */
-.recommendation {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
+view {
+  padding: 20px;
 }
 
 text {
-  display: block;
-  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+block {
+  margin-top: 10px;
 }

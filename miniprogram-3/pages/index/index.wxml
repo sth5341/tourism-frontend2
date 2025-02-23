@@ -1,7 +1,7 @@
 <!-- pages/index/index.wxml -->
 <view>
-  <view class="recommendation" wx:for="{{recommendations}}" wx:key="unique">
-    <text>{{item.name}}</text> <!-- Example of a recommendation item -->
-    <text>{{item.description}}</text> <!-- Example of a description -->
-  </view>
+  <text>Attractions:</text>
+  <block wx:for="{{attractions}}" wx:key="id">
+    <view>{{item.name}}</view>  <!-- Display the name of each attraction -->
+  </block>
 </view>
