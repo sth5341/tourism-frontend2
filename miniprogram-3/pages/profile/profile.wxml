@@ -1,0 +1,6 @@
+<!-- pages/profile/profile.wxml -->
+<view>
+  <text>User Profile</text>
+  <text>Name: {{userProfile.name}}</text>
+  <text>Email: {{userProfile.email}}</text>
+</view>

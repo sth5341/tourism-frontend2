@@ -1,0 +1,11 @@
+/* pages/recommendations/recommendations.wxss */
+.recommendation {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+text {
+  display: block;
+  margin-bottom: 5px;
+}
